@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyforge — Token &amp; Key Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="app-header">
+      <div class="wordmark"><span class="wordmark-mark">&#10022;</span> Keyforge</div>
+      <p class="tagline">Generate secure tokens and encryption keys, entirely in your browser.</p>
+    </header>
+
+    <nav class="switcher" role="tablist" aria-label="Generator type">
+      <button class="switcher-btn is-active" data-panel="token" role="tab" aria-selected="true" id="tab-token">Token
+        Generator</button>
+      <button class="switcher-btn" data-panel="key" role="tab" aria-selected="false" id="tab-key">Encryption
+        Keys</button>
+      <span class="switcher-indicator" id="switcherIndicator"></span>
+    </nav>
+
+    <main>
+
+      <!-- TOKEN GENERATOR -->
+      <section id="panel-token" class="panel is-active" role="tabpanel" aria-labelledby="tab-token">
+        <div class="card">
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="tokenLength">Length</label>
+              <span class="value-pill" id="tokenLengthValue">32</span>
+            </div>
+            <input type="range" id="tokenLength" min="8" max="128" value="32" step="1">
+          </div>
+
+          <div class="field">
+            <span class="field-label">Character sets</span>
+            <div class="chip-row">
+              <label class="chip"><input type="checkbox" id="optUpper" checked><span>A–Z</span></label>
+              <label class="chip"><input type="checkbox" id="optLower" checked><span>a–z</span></label>
+              <label class="chip"><input type="checkbox" id="optNumbers" checked><span>0–9</span></label>
+              <label class="chip"><input type="checkbox" id="optSymbols"><span>!@#$%</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="switch-row" for="optAmbiguous">
+              <span>Exclude ambiguous characters <em>(l, 1, I, O, 0)</em></span>
+              <input type="checkbox" id="optAmbiguous">
+            </label>
+          </div>
+
+          <button class="btn btn-primary" id="generateToken">Generate token</button>
+
+          <div class="field output-field">
+            <div class="field-label-row">
+              <label for="tokenOutput">Result</label>
+              <span class="value-pill value-pill-muted" id="tokenEntropy">— bits of entropy</span>
+            </div>
+            <div class="output-row">
+              <input type="text" id="tokenOutput" class="output-box" readonly placeholder="Your token will appear here">
+              <button class="btn btn-ghost" id="copyToken">Copy</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ENCRYPTION KEY GENERATOR -->
+      <section id="panel-key" class="panel" role="tabpanel" aria-labelledby="tab-key">
+        <div class="card">
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="keyType">Key type</label>
+              <select id="keyType">
+                <option value="16">AES-128 (16 bytes)</option>
+                <option value="24">AES-192 (24 bytes)</option>
+                <option value="32" selected>AES-256 (32 bytes)</option>
+                <option value="custom">Custom length</option>
+              </select>
+            </div>
+            <div class="field" id="customLengthField" hidden>
+              <label for="customLength">Bytes</label>
+              <input type="number" id="customLength" min="8" max="64" value="32">
+            </div>
+            <div class="field">
+              <label for="keyFormat">Output format</label>
+              <select id="keyFormat">
+                <option value="hex" selected>Hex</option>
+                <option value="base64">Base64</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="generateKey">Generate key</button>
+
+          <div class="field output-field">
+            <label for="keyOutput">Secret key</label>
+            <div class="output-row">
+              <input type="text" id="keyOutput" class="output-box mono" readonly
+                placeholder="Your key will appear here">
+              <button class="btn btn-ghost" id="copyKey">Copy</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="field-label-row">
+            <span class="field-label">Initialization vector (IV)</span>
+            <span class="value-pill value-pill-muted">16 bytes · required per encryption</span>
+          </div>
+          <button class="btn btn-secondary" id="generateIv">Generate IV</button>
+
+          <div class="field output-field">
+            <div class="output-row">
+              <input type="text" id="ivOutput" class="output-box mono" readonly placeholder="Your IV will appear here">
+              <button class="btn btn-ghost" id="copyIv">Copy</button>
+            </div>
+          </div>
+
+          <p class="hint">Use a freshly generated IV for every message you encrypt with this key — never reuse one.</p>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://builtbyethereal.com/">EtherealStudios</a>. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
