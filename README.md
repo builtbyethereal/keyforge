@@ -3,7 +3,7 @@
 # 🗝️ Keyforge
 
 **Generate secure API tokens and encryption keys — instantly, in your browser.**
-
+![License](https://img.shields.io/badge/license-MIT-4FD1C5?style=flat-square)
 ![Built with](https://img.shields.io/badge/built%20with-HTML%20%C2%B7%20CSS%20%C2%B7%20JS-8C9EFF?style=flat-square)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-2ea44f?style=flat-square)
 ![Made by](https://img.shields.io/badge/made%20by-etherealStudios-1D2733?style=flat-square)
@@ -85,6 +85,10 @@ Contributions are welcome. For larger changes, please open an issue first to dis
 2. Create your feature branch (`git checkout -b feature/amazing-thing`)
 3. Commit your changes
 4. Open a pull request
+
+## 📄 License
+ 
+Distributed under the MIT License.
 
 ## ⚠️ Disclaimer
 
