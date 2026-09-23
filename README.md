@@ -10,7 +10,6 @@
 ![Made by](https://img.shields.io/badge/made%20by-etherealStudios-1D2733?style=flat-square)
 
 </div>
----
 
 ## ✨ Overview
 
