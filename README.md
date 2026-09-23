@@ -10,15 +10,6 @@
 ![Made by](https://img.shields.io/badge/made%20by-etherealStudios-1D2733?style=flat-square)
 
 </div>
-
-<br>
-
-<p align="center">
-  <img src="docs/screenshot.png" alt="Keyforge screenshot" width="600">
-  <br>
-  <sub>Replace <code>docs/screenshot.png</code> with your own screenshot before publishing.</sub>
-</p>
-
 ---
 
 ## ✨ Overview
