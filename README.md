@@ -98,5 +98,5 @@ Keyforge is provided for convenience and educational purposes. Review your own s
 ---
 
 <div align="center">
-<sub>© 2026 <strong>etherealStudios</strong>. All rights reserved.</sub>
+<sub>© 2026 <strong><a href='https://builtbyethereal.com/'>EtherealStudios</a></strong>. All rights reserved.</sub>
 </div>
