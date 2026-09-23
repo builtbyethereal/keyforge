@@ -12,7 +12,7 @@
 
 ## ✨ Overview
 
-Keyforge is a lightweight, single-page tool for generating cryptographically secure tokens and symmetric encryption keys, entirely on the client side. There's no backend, no build step, and no analytics — everything is powered by the browser's native [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API).
+Keyforge is a lightweight, single-page tool for generating cryptographically secure tokens and symmetric encryption keys, entirely on the client side. There's no backend, no build step, and no analytics — everything is powered by the browser's native.
 
 ## 🚀 Features
 
